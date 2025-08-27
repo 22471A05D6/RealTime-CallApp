@@ -1,0 +1,287 @@
+/* ========== GLOBAL PAGE LAYOUT ========== */
+/* Global page layout */
+/* Normal page layout */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;     /* most pages start below navbar */
+  align-items: center;
+  background: linear-gradient(135deg, #fff8f0 0%, #f0f8ff 100%);
+  padding: 80px 20px 40px;         /* top=80px for navbar, bottom smaller */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Wrapper box (only needed for forms/lists) */
+.page-center {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+}
+
+/* 🔹 Special case: MainMenu should be fully centered */
+/* 🔹 Special case: MainMenu should be fully centered */
+.page.mainmenu {
+  justify-content: center;   /* vertical center */
+  align-items: center;
+  padding: 20px;             /* even spacing */
+}
+
+.page.mainmenu .menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+
+
+/* Titles */
+.title, .subtitle {
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.title { font-size: 2.5rem; }
+.subtitle { font-size: 1.8rem; }
+
+/* ========== BUTTONS ========== */
+.primary-button, .secondary-button, .delete-button, .link-button {
+  display: inline-block;
+  min-width: 140px;
+  padding: 12px 20px;
+  margin: 6px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+/* Primary gradient */
+.primary-button {
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.25);
+}
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(74, 144, 226, 0.35);
+}
+
+/* Secondary */
+.secondary-button {
+  background: linear-gradient(45deg, #7ed56f, #28b485);
+  color: #fff;
+}
+.secondary-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Delete */
+.delete-button {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  color: #fff;
+}
+.delete-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Link style */
+.link-button {
+  background: transparent;
+  color: #357abd;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+/* ========== FORMS (AddMember) ========== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #4a90e2;
+}
+
+/* ========== CALL GROUP ========== */
+/* 🔹 Call Group + Mute All buttons */
+.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: nowrap; /* ✅ keep them side by side */
+}
+
+.toolbar button {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  min-width: 110px;
+}
+
+/* 🔹 Picked + Not Picked lists */
+.columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap; /* ✅ force one row */
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  min-width: 150px;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Make sure it works on small screens too */
+@media (max-width: 480px) {
+  .toolbar button {
+    min-width: 90px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  .columns {
+    gap: 12px;
+  }
+  .column {
+    min-width: 130px;
+    padding: 12px;
+  }
+}
+
+/* ========== GROUP LIST ========== */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.edit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* 🔹 Action buttons layout */
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;           /* spacing between buttons */
+  flex-wrap: wrap;     /* allow wrapping on smaller screens */
+  margin-top: 8px;
+}
+
+/* 🔹 Buttons style */
+.actions button {
+  padding: 6px 12px;    /* smaller buttons */
+  font-size: 0.9rem;
+  border-radius: 6px;
+  min-width: 70px;
+  flex: 0 1 auto;       /* let them shrink but not disappear */
+}
+
+/* ✅ Mobile view adjustments */
+@media (max-width: 480px) {
+  .actions {
+    gap: 6px;
+  }
+
+  .actions button {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+}
+
+/* 🎨 Optional color theming */
+.secondary-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.primary-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.link-button {
+  background: transparent;
+  color: #007bff;
+  border: none;
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .page-center { max-width: 360px; padding: 20px; }
+  .title { font-size: 2rem; }
+  .subtitle { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .page-center { max-width: 300px; padding: 16px; }
+  .title { font-size: 1.6rem; }
+  .subtitle { font-size: 1.2rem; }
+  .primary-button, .secondary-button, .delete-button { min-width: 100%; }
+}
