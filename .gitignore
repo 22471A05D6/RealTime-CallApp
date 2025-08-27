@@ -1,3 +1,6 @@
+".env" 
+  
+
 MONGO_URI=mongodb+srv://user:root@cluster0.ohjqz3w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 PORT=5000
 TWILIO_ACCOUNT_SID=AC5d25d4ec483ce7500dd6925256f0f20f
