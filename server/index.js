@@ -20,8 +20,9 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'http://localhost:5000',
-      'https://real-time-call-app-m228.vercel.app',
+      'https://realtime-callapp.onrender.com',
+      
+      'https://real-time-call-app-gzoz.vercel.app/',
     ],
     credentials: true,
   })
