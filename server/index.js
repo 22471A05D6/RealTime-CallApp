@@ -21,12 +21,12 @@ app.use(
     origin: [
       'http://localhost:5173',
       'https://realtime-callapp.onrender.com',
-      
-      'https://real-time-call-app-gzoz.vercel.app/',
+      'https://real-time-call-app-gzoz.vercel.app', // ✅ no trailing slash
     ],
     credentials: true,
   })
 )
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
