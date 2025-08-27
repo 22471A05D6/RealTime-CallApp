@@ -4,7 +4,7 @@ import { io } from 'socket.io-client'
 import BackButton from '../components/BackButton.jsx'
 import './theme.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000'
+const API_BASE = import.meta.env.VITE_APP_API_URL || 'https://realtime-callapp.onrender.com'
 
 function CallGroup() {
   const [members, setMembers] = useState([])

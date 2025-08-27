@@ -3,7 +3,7 @@ import axios from 'axios'
 import BackButton from '../components/BackButton.jsx'
 import './theme.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000'
+const API_BASE = import.meta.env.VITE_APP_API_URL || 'https://realtime-callapp.onrender.com'
 
 function GroupList() {
   const [members, setMembers] = useState([])
